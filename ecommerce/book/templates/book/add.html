@@ -1,0 +1,22 @@
+{%extends 'book/base.html'%}
+{%block title%}
+        Book-Add
+{%endblock%}
+{%block content%}
+<form method="post">
+    {%csrf_token%}
+    <label>Name</label>
+    <input type="text" name="name" required maxlength="200">
+    </br>
+    <label>Latest Version</label>
+    <input type="number" name="version" required>
+    </br>
+    <label>Image</label>
+    <input type="file" name="image">
+    </br>
+    <input type="submit" value="Add">
+</form>
+<div class="error">
+    {{msg}}
+</div>
+{%endblock%}

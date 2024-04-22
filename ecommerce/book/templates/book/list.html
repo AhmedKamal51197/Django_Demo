@@ -1,0 +1,34 @@
+{%extends 'book/base.html' %}
+{%block title%}
+Book_List
+{%endblock%}
+{%block content%}
+<h1>Books</h1>
+<!--{{books}}-->
+<!--<a href="/Book/Add">Add</a>-->
+
+<table border="1" width="100%">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Version</td>
+        <td>Actions</td>
+    </tr>
+    {%for book in books%}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.latest_version}}</td>
+            <td>
+                <a href="{%url 'book_details' book.name %}">show details</a>
+                <a href="">Update</a>
+                <a href="{%url 'book_delete' book.id %}">Delete</a>
+            </td>
+        </tr>
+
+
+    {%endfor%}
+
+</table>
+
+{%endblock%}

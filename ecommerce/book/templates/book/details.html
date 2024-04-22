@@ -1,0 +1,28 @@
+{%extends 'book/base.html' %}
+{%block title%}
+Book_Details
+{%endblock%}
+{%block content%}
+<h1>Books</h1>
+<table>
+    <tr>
+        <td>
+            <label>Name:</label>{{book.name}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Publish Date:</label>{{book.publish_date}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>version:</label>{{book.latest_version}}
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="3">
+            <img src="{{book.image}}"/>
+        </td>
+    </tr>
+</table>{%endblock%}
